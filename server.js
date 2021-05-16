@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const cors = require('cors');
 dotenv.config();
 const exphbs = require("express-handlebars");
 
@@ -16,6 +17,7 @@ mongoose.connect('mongodb://127.0.0.1/Notedb');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors());
 
 
 app.engine("handlebars", exphbs({defaultLayout: "main", layoutsDir: `${__dirname}/api/views/layouts`}));
