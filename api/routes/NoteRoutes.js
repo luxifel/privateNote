@@ -3,7 +3,7 @@ module.exports = function(app) {
   var noteController = require('../controllers/noteController');
 
   app.route('/')
-      .get((req, res) => res.render('home'));
+    .get((req, res) => res.render('home'));
 
   app.route('/create')
     .post(noteController.create_a_note);
